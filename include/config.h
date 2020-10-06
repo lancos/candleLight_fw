@@ -133,6 +133,23 @@ THE SOFTWARE.
 	#define LED2_Pin GPIO_PIN_1	/* red */
 	#define LED2_Mode GPIO_MODE_OUTPUT_PP
 	#define LED2_Active_High 1
+#elif BOARD == BOARD_ek454
+	#define USBD_PRODUCT_STRING_FS		(uint8_t*) "ek454 isolated USB to CAN adapter"
+	#define USBD_MANUFACTURER_STRING	(uint8_t*) "Eurek"
+	#define DFU_INTERFACE_STRING_FS		(uint8_t*) "candleLight firmware upgrade interface"
+	#define CAN_S_Pin GPIO_PIN_13
+	#define CAN_S_GPIO_Port GPIOC
+
+	#define LED1_Pin GPIO_PIN_0
+	#define LED1_Mode GPIO_MODE_OUTPUT_OD
+	#define LED1_GPIO_Port GPIOA
+	#define LED1_Active_High 1
+
+	#define LED2_GPIO_Port GPIOA
+	#define LED2_Pin GPIO_PIN_1
+	#define LED2_Mode GPIO_MODE_OUTPUT_OD
+	#define LED2_Active_High 1
+
 #else
 	#error please define BOARD
 #endif
